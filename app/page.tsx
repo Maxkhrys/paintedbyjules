@@ -86,8 +86,8 @@ export default function HomePage() {
       <section className="home-register page-shell" aria-labelledby="register-title">
         <div className="home-register__ledger">
           <p><span>12</span> works in the current viewing</p>
-          <p><span>06</span> original works</p>
-          <p><span>06</span> portrait studies</p>
+          <p><span>07</span> original works</p>
+          <p><span>05</span> portrait studies</p>
           <p><span>I</span> inaugural collection</p>
         </div>
 
