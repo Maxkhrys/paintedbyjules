@@ -1,10 +1,43 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "@/components/ArrowUpRight";
 import { ArtworkCard } from "@/components/ArtworkCard";
 import { EditorialLink } from "@/components/EditorialLink";
 import { commissionSteps } from "@/config/commissions";
 import { getArtwork } from "@/data/artworks";
+
+function AtelierHeroImage() {
+  const common = {
+    alt: "A young painter seated in her warm, light-filled studio before a large textural canvas",
+    sizes: "100vw",
+    quality: 90,
+    fetchPriority: "high" as const,
+  };
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({
+    ...common,
+    src: "/atelier-hero-desktop-v2.webp",
+    width: 2560,
+    height: 1440,
+  });
+  const {
+    props: { srcSet: mobile, ...imageProps },
+  } = getImageProps({
+    ...common,
+    src: "/atelier-hero-mobile-v2.webp",
+    width: 1440,
+    height: 2560,
+  });
+
+  return (
+    <picture className="atelier-hero__picture">
+      <source media="(min-width: 40.001rem)" srcSet={desktop} />
+      <source media="(max-width: 40rem)" srcSet={mobile} />
+      <img {...imageProps} alt={common.alt} className="atelier-hero__image" />
+    </picture>
+  );
+}
 
 export default function HomePage() {
   const sundaySilk = getArtwork("sunday-silk")!;
@@ -20,14 +53,7 @@ export default function HomePage() {
   return (
     <main id="main-content" className="home-page">
       <section className="atelier-hero" aria-labelledby="home-title">
-        <Image
-          className="atelier-hero__image"
-          src="/atelier-hero.webp"
-          alt="A young painter seated in her warm, light-filled studio before a large textural canvas"
-          fill
-          preload
-          sizes="100vw"
-        />
+        <AtelierHeroImage />
         <div className="atelier-hero__leaf" aria-hidden="true" />
 
         <div className="atelier-hero__content">

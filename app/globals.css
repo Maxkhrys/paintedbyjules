@@ -632,12 +632,20 @@ svg {
     linear-gradient(0deg, rgba(18, 13, 10, 0.5), transparent 32%);
 }
 
-.atelier-hero__image {
+.atelier-hero__picture {
+  position: absolute;
   z-index: 0;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.atelier-hero__image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: 55% center;
-  filter: saturate(0.82) contrast(1.04) brightness(0.84);
-  animation: atelier-breathe 16s ease-out both;
+  object-position: center;
+  filter: saturate(0.86) contrast(1.06) brightness(0.82);
 }
 
 .atelier-hero__leaf {
@@ -758,15 +766,6 @@ svg {
   font-size: 0.64rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-@keyframes atelier-breathe {
-  from {
-    transform: scale(1.018);
-  }
-  to {
-    transform: scale(1);
-  }
 }
 
 .home-register {
@@ -2857,7 +2856,7 @@ svg {
   }
 
   .atelier-hero__image {
-    object-position: 61% center;
+    object-position: 58% center;
   }
 
   .atelier-hero__leaf {
@@ -3101,8 +3100,8 @@ svg {
   }
 
   .atelier-hero__image {
-    object-position: 64% center;
-    filter: saturate(0.78) contrast(1.03) brightness(0.72);
+    object-position: center;
+    filter: saturate(0.84) contrast(1.06) brightness(0.7);
   }
 
   .atelier-hero__leaf {
@@ -3114,7 +3113,7 @@ svg {
   }
 
   .atelier-hero__content {
-    top: 10rem;
+    top: clamp(8.75rem, 18svh, 10rem);
     width: calc(100% - (var(--page-gutter) * 2));
   }
 
@@ -3133,14 +3132,15 @@ svg {
   .atelier-hero h1 em {
     align-self: flex-start;
     margin-top: 0.14em;
-    margin-left: 0.32em;
+    margin-left: 0.18em;
     font-size: clamp(3.7rem, 17vw, 5.6rem);
   }
 
   .atelier-hero__introduction {
     grid-template-columns: 1fr;
-    width: min(20rem, 84vw);
-    margin-top: 2.6rem;
+    width: min(19rem, 82vw);
+    gap: 1.2rem;
+    margin-top: clamp(2rem, 5svh, 2.6rem);
   }
 
   .atelier-hero__introduction > p {
