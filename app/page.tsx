@@ -5,12 +5,8 @@ import { ArtworkCard } from "@/components/ArtworkCard";
 import { EditorialLink } from "@/components/EditorialLink";
 import { commissionSteps } from "@/config/commissions";
 import { getArtwork } from "@/data/artworks";
-import { formatPrice } from "@/lib/format-price";
 
 export default function HomePage() {
-  const softHours = getArtwork("soft-hours")!;
-  const afterlight = getArtwork("afterlight")!;
-  const garden = getArtwork("garden-at-eleven")!;
   const sundaySilk = getArtwork("sunday-silk")!;
   const blueMorning = getArtwork("blue-before-morning")!;
   const wildPeonies = getArtwork("wild-peonies")!;
@@ -23,64 +19,39 @@ export default function HomePage() {
 
   return (
     <main id="main-content" className="home-page">
-      <section className="salon-hero" aria-labelledby="home-title">
-        <div className="salon-hero__ceiling" aria-hidden="true" />
-        <p className="salon-hero__room-code">Private viewing / Collection I</p>
+      <section className="atelier-hero" aria-labelledby="home-title">
+        <Image
+          className="atelier-hero__image"
+          src="/atelier-hero.webp"
+          alt="A young painter seated in her warm, light-filled studio before a large textural canvas"
+          fill
+          preload
+          sizes="100vw"
+        />
+        <div className="atelier-hero__leaf" aria-hidden="true" />
 
-        <div className="salon-hero__gallery">
-          <figure className="salon-hero__work salon-hero__work--left">
-            <Image
-              src={afterlight.images[0].src}
-              alt={afterlight.images[0].alt}
-              fill
-              priority
-              sizes="22vw"
-            />
-          </figure>
-
-          <figure className="salon-hero__work salon-hero__work--centre">
-            <Link href={`/gallery/${softHours.slug}`} aria-label={`View ${softHours.title}`}>
-              <Image
-                src={softHours.images[0].src}
-                alt={softHours.images[0].alt}
-                fill
-                priority
-                sizes="(max-width: 760px) 78vw, 38vw"
-              />
-              <figcaption>
-                <span>No. 01 / {softHours.title}</span>
-                <span>{softHours.price ? formatPrice(softHours.price) : "Private enquiry"}</span>
-              </figcaption>
-            </Link>
-          </figure>
-
-          <figure className="salon-hero__work salon-hero__work--right">
-            <Image
-              src={garden.images[0].src}
-              alt={garden.images[0].alt}
-              fill
-              priority
-              sizes="22vw"
-            />
-          </figure>
-        </div>
-
-        <div className="salon-hero__identity">
+        <div className="atelier-hero__content">
+          <p className="atelier-hero__folio">People, places, emotion</p>
           <h1 id="home-title">
-            <span>Painted by</span>
-            <span>Jules</span>
+            <span>Paintings that</span>
+            <em>keep the feeling.</em>
           </h1>
-          <p>Original paintings and portrait commissions, made slowly by one hand.</p>
+          <div className="atelier-hero__introduction">
+            <p>
+              Original paintings and private portrait commissions, made slowly
+              by one hand in Wicklow.
+            </p>
+            <Link className="atelier-hero__entry" href="/gallery">
+              Explore the collection
+              <ArrowUpRight />
+            </Link>
+          </div>
         </div>
 
-        <Link className="salon-hero__entry" href="/gallery">
-          Enter the viewing room
-          <ArrowUpRight />
-        </Link>
-
-        <p className="salon-hero__edition" aria-hidden="true">
-          Twelve works · 2026
-        </p>
+        <div className="atelier-hero__register" aria-hidden="true">
+          <p>Painted by Jules / Wicklow, Ireland</p>
+          <p>Atelier collection I / 2026</p>
+        </div>
       </section>
 
       <section className="home-register page-shell" aria-labelledby="register-title">
@@ -92,7 +63,10 @@ export default function HomePage() {
         </div>
 
         <header className="home-register__introduction">
-          <h2 id="register-title">Paintings with a private life.</h2>
+          <h2 id="register-title">
+            <span>Paintings with</span>
+            <em>a private life.</em>
+          </h2>
           <div>
             <p>
               Figures, rooms, flowers and coastlines held in a restrained palette,

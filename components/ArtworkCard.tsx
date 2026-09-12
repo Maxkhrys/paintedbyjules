@@ -17,6 +17,10 @@ function availabilityLabel(artwork: Artwork) {
   return "Original work";
 }
 
+function workTypeLabel(artwork: Artwork) {
+  return artwork.type === "commission-example" ? "Private portrait study" : "Original painting";
+}
+
 export function ArtworkCard({ artwork, className = "", priority = false }: ArtworkCardProps) {
   const image = artwork.images[0];
   const catalogueNumber = String(artworks.findIndex((item) => item.slug === artwork.slug) + 1).padStart(2, "0");
@@ -34,7 +38,7 @@ export function ArtworkCard({ artwork, className = "", priority = false }: Artwo
             width={image.width}
             height={image.height}
             sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 38vw"
-            priority={priority}
+            preload={priority}
           />
           <span className="artwork-card__enter" aria-hidden="true">
             View work
@@ -42,12 +46,33 @@ export function ArtworkCard({ artwork, className = "", priority = false }: Artwo
           </span>
         </div>
         <div className="artwork-card__meta">
-          <p className="artwork-card__index">No. {catalogueNumber}</p>
+          <div className="artwork-card__register">
+            <p className="artwork-card__index">No. {catalogueNumber}</p>
+            <p className="artwork-card__type">{workTypeLabel(artwork)}</p>
+          </div>
           <div className="artwork-card__title">
             <h3>{artwork.title}</h3>
             <p>{availabilityLabel(artwork)}</p>
           </div>
-          <p className="artwork-card__medium">{artwork.medium}</p>
+          <p className="artwork-card__description">{artwork.description}</p>
+          <dl className="artwork-card__details">
+            <div>
+              <dt>Medium</dt>
+              <dd>{artwork.medium}</dd>
+            </div>
+            <div>
+              <dt>Scale</dt>
+              <dd>{artwork.dimensions}</dd>
+            </div>
+            <div>
+              <dt>Year</dt>
+              <dd>{artwork.year}</dd>
+            </div>
+          </dl>
+          <span className="artwork-card__view" aria-hidden="true">
+            Open the catalogue entry
+            <ArrowUpRight />
+          </span>
         </div>
       </Link>
     </article>

@@ -14,8 +14,14 @@ export default function GalleryPage() {
       <header className="gallery-page__header page-shell">
         <p>Collection I / 2026</p>
         <div className="gallery-page__title">
-          <h1>The viewing room</h1>
-          <p>Original works and commissioned studies, presented together as one private collection.</p>
+          <h1>
+            <span>The private</span>
+            <em>collection.</em>
+          </h1>
+          <p>
+            Twelve original works and commissioned studies. Each catalogue entry
+            records its story, surface, scale and availability.
+          </p>
         </div>
         <dl>
           <div><dt>Works</dt><dd>12</dd></div>
