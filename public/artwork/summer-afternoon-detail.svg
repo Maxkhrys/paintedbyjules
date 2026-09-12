@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Summer Afternoon paint detail</title>
+  <desc id="desc">Close crop of layered ochre and chalk brushwork.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".72" numOctaves="4" seed="37"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .2 0"/></filter></defs>
+  <rect width="1200" height="1500" fill="#ba7b5d"/>
+  <path d="M-90 83c385 66 651 227 842 482 139 185 300 278 538 279v498c-393-63-668-226-826-490C329 627 143 545-90 607Z" fill="#d4aa60"/>
+  <path d="M155-90c21 428 120 780 297 1055" fill="none" stroke="#8a8865" stroke-width="183" stroke-linecap="round" opacity=".82"/>
+  <path d="M948-80c-88 380-94 737-19 1071" fill="none" stroke="#eee3d1" stroke-width="128" stroke-linecap="round" opacity=".68"/>
+  <path d="M-17 1224c344-98 727-68 1169 91" fill="none" stroke="#6f694d" stroke-width="48" stroke-linecap="round"/>
+  <rect width="1200" height="1500" filter="url(#grain)"/>
+</svg>

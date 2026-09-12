@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Mother and Daughter study</title>
+  <desc id="desc">Two softly painted figures held in an earth-toned composition.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".7" numOctaves="4" seed="5"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .14 0"/></filter><filter id="edge"><feTurbulence baseFrequency=".02" numOctaves="2" seed="12" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="13"/></filter></defs>
+  <rect width="1200" height="1500" fill="#c9c0b1"/>
+  <path d="M0 0h296l70 1500H0Z" fill="#887a6c" opacity=".62"/>
+  <path d="M966 0h234v1500H839c84-411 101-851 127-1500Z" fill="#ded4c4"/>
+  <g filter="url(#edge)">
+    <path d="M292 1337c18-286 99-477 279-564 158-76 330 6 376 197 28 118 30 234 21 367Z" fill="#6f6259"/>
+    <ellipse cx="557" cy="603" rx="214" ry="267" fill="#bb8068"/>
+    <path d="M340 580c15-217 126-358 294-322 125 27 203 131 177 298-120-84-260-77-471 24Z" fill="#453833"/>
+    <ellipse cx="756" cy="821" rx="156" ry="194" fill="#d39a7e"/>
+    <path d="M608 806c31-170 137-269 265-220 92 35 129 133 93 255-93-64-211-76-358-35Z" fill="#765548"/>
+    <path d="M421 635c88-43 172-46 255-7" fill="none" stroke="#5a3e36" stroke-width="20" stroke-linecap="round"/>
+    <path d="M670 835c63-30 123-28 179 5" fill="none" stroke="#6a4439" stroke-width="16" stroke-linecap="round"/>
+    <path d="M436 765c77 50 158 52 244 7" fill="none" stroke="#75433e" stroke-width="19" stroke-linecap="round"/>
+    <path d="M690 926c51 28 101 27 151-4" fill="none" stroke="#8c5146" stroke-width="15" stroke-linecap="round"/>
+  </g>
+  <path d="M250 1218c193-91 430-79 711 83" fill="none" stroke="#b79f89" stroke-width="116" stroke-linecap="round" opacity=".74"/>
+  <path d="M381 1308c203-60 378-42 526 59" fill="none" stroke="#dfd2bd" stroke-width="51" stroke-linecap="round" opacity=".72"/>
+  <rect width="1200" height="1500" filter="url(#grain)"/>
+</svg>

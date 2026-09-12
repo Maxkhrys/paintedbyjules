@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Wild Garden botanical study</title>
+  <desc id="desc">Layered botanical forms in moss, chalk and dark berry.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".65" numOctaves="4" seed="8"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .13 0"/></filter><filter id="rough"><feTurbulence baseFrequency=".016" numOctaves="2" seed="19" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="13"/></filter></defs>
+  <rect width="1100" height="1400" fill="#b7b49c"/>
+  <path d="M0 0h1100v1400H0Z" fill="#4d5747" opacity=".36"/>
+  <g filter="url(#rough)" fill="none" stroke-linecap="round">
+    <path d="M111 1410C235 1130 296 791 287 393" stroke="#ece5d4" stroke-width="27"/>
+    <path d="M302 1423c134-362 263-746 461-1122" stroke="#53634c" stroke-width="41"/>
+    <path d="M632 1430c39-392 131-760 298-1104" stroke="#ded5ba" stroke-width="24"/>
+    <path d="M936 1416c-33-347-151-676-354-987" stroke="#6b473e" stroke-width="31"/>
+  </g>
+  <g opacity=".92">
+    <path d="M208 487c-171-46-177-170-22-220 113 50 126 130 22 220Z" fill="#7e7653"/>
+    <path d="M354 660c-132-123-75-242 90-221 79 102 45 178-90 221Z" fill="#d4c6a8"/>
+    <path d="M672 401c-59-170 43-246 177-146 22 127-37 177-177 146Z" fill="#6a3940"/>
+    <path d="M768 713c85-160 215-140 248 24-69 109-146 101-248-24Z" fill="#a6806d"/>
+    <path d="M478 929c-154-92-128-220 37-238 98 84 84 160-37 238Z" fill="#7b4a48"/>
+    <circle cx="521" cy="563" r="94" fill="#e4d6b9" opacity=".81"/>
+    <circle cx="866" cy="918" r="76" fill="#4c5c48"/>
+    <circle cx="252" cy="995" r="67" fill="#b78670"/>
+  </g>
+  <path d="M32 1198c302-118 651-91 1018 81" fill="none" stroke="#d8cdb4" stroke-width="62" stroke-linecap="round" opacity=".44"/>
+  <rect width="1100" height="1400" filter="url(#grain)"/>
+</svg>

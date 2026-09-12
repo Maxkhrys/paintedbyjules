@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Quiet Company pet portrait study</title>
+  <desc id="desc">Expressive painted dog portrait in russet, smoke and cream.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="3" seed="29"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .14 0"/></filter><filter id="rough"><feTurbulence baseFrequency=".025" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="15"/></filter></defs>
+  <rect width="1200" height="1200" fill="#a69c8d"/>
+  <path d="M0 933c328-134 734-161 1200-70v337H0Z" fill="#514842"/>
+  <path d="M0 0h1200v258C874 185 472 197 0 355Z" fill="#d2c6b4" opacity=".67"/>
+  <g filter="url(#rough)">
+    <path d="M330 537 147 276c175-25 300 45 358 203Z" fill="#734738"/>
+    <path d="m862 508 180-245c-172-14-281 64-334 209Z" fill="#6d4438"/>
+    <path d="M305 581c86-234 281-331 489-214 181 101 227 374 82 574-138 189-438 184-567-13-67-102-67-223-4-347Z" fill="#a9654b"/>
+    <path d="M373 572c86-128 171-185 257-171-49 126-42 259 21 399-134-38-227-114-278-228Z" fill="#c8926c"/>
+    <path d="M646 402c107 20 190 84 248 192-38 96-115 164-232 205 49-150 43-282-16-397Z" fill="#8a4f3f"/>
+    <ellipse cx="454" cy="625" rx="48" ry="38" fill="#282421"/>
+    <ellipse cx="749" cy="620" rx="48" ry="38" fill="#282421"/>
+    <path d="M486 795c75-80 158-84 239-5-44 105-187 113-239 5Z" fill="#372c28"/>
+    <path d="M523 889c63 43 126 43 190-2" fill="none" stroke="#d5a082" stroke-width="29" stroke-linecap="round"/>
+    <path d="M592 425c-34 175-29 302 15 380" fill="none" stroke="#e2c6a4" stroke-width="42" stroke-linecap="round" opacity=".55"/>
+  </g>
+  <rect width="1200" height="1200" filter="url(#grain)"/>
+</svg>

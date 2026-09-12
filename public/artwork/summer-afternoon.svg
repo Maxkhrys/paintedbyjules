@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Summer Afternoon abstract study</title>
+  <desc id="desc">Abstract original study in ochre, chalk, olive and faded coral.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".45" numOctaves="5" seed="3"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .16 0"/></filter><filter id="bleed"><feTurbulence baseFrequency=".018" numOctaves="2" seed="31" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="24"/></filter></defs>
+  <rect width="1200" height="1500" fill="#d8cbb7"/>
+  <g filter="url(#bleed)">
+    <path d="M-66 164c282-129 493-96 704 12 166 85 361 103 623 44v320H-66Z" fill="#b97855" opacity=".86"/>
+    <path d="M-40 450c256-75 476-28 673 74 183 95 385 119 614 60v383H-40Z" fill="#8b8762" opacity=".88"/>
+    <path d="M-80 833c242-133 475-123 699 31 193 132 393 135 628 8v391H-80Z" fill="#d3a151" opacity=".82"/>
+    <path d="M0 1201c288-85 554-54 806 74 135 69 282 82 441 39v250H0Z" fill="#aa6756" opacity=".76"/>
+  </g>
+  <path d="M223 51c-21 390 24 753 136 1089" stroke="#ede3d1" stroke-width="42" stroke-linecap="round" opacity=".63"/>
+  <path d="M824 233c-88 361-96 696-24 1006" stroke="#5c5a45" stroke-width="29" stroke-linecap="round" opacity=".54"/>
+  <path d="M1000 37c-75 413-83 840-24 1281" stroke="#e6d3af" stroke-width="71" stroke-linecap="round" opacity=".55"/>
+  <path d="M72 682c388-37 732-10 1033 80" fill="none" stroke="#f1e8d8" stroke-width="24" stroke-linecap="round" opacity=".57"/>
+  <rect width="1200" height="1500" filter="url(#grain)"/>
+</svg>

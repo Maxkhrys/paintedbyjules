@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Still Here brushwork detail</title>
+  <desc id="desc">Close abstract crop of layered portrait brushwork.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".5" numOctaves="5" seed="22"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .2 0"/></filter></defs>
+  <rect width="1200" height="1500" fill="#a56f5d"/>
+  <path d="M0 0h486L212 1500H0Z" fill="#3a302c"/>
+  <path d="M347 0h403L556 1500H126Z" fill="#c08b70" opacity=".9"/>
+  <path d="M643 0h557v1500H726c82-344-12-666-83-1500Z" fill="#c6b6a3"/>
+  <path d="M609 88c181 355 211 683 80 983" fill="none" stroke="#745047" stroke-width="47" stroke-linecap="round"/>
+  <path d="M682 206c155 305 182 585 79 840" fill="none" stroke="#d6ad8d" stroke-width="29" stroke-linecap="round" opacity=".7"/>
+  <path d="M766 843c159-51 291-25 434 71" fill="none" stroke="#5f6b70" stroke-width="118" opacity=".58"/>
+  <path d="M214 1180c263-119 487-91 716 52" fill="none" stroke="#e0d2be" stroke-width="70" stroke-linecap="round" opacity=".55"/>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity=".8"/>
+</svg>

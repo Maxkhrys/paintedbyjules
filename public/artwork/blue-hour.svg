@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Blue Hour landscape study</title>
+  <desc id="desc">Low abstract horizon in smoky blue, sand and deep brown.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".55" numOctaves="5" seed="13"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .14 0"/></filter><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4e5960"/><stop offset=".6" stop-color="#7e8584"/><stop offset="1" stop-color="#c3ad93"/></linearGradient></defs>
+  <rect width="1500" height="1050" fill="url(#sky)"/>
+  <path d="M0 629c292-56 545-47 761 27 251 86 497 75 739-33v427H0Z" fill="#3d3834"/>
+  <path d="M0 698c333-64 667-32 1000 95 173 66 340 74 500 25v232H0Z" fill="#63584d"/>
+  <path d="M0 587c411-37 768-18 1070 58 168 42 311 37 430-15" fill="none" stroke="#dac4a6" stroke-width="38" stroke-linecap="round" opacity=".75"/>
+  <path d="M164 184c313 77 610 67 891-31" fill="none" stroke="#aab0ae" stroke-width="61" stroke-linecap="round" opacity=".24"/>
+  <path d="M1162 194c106 10 197-8 274-55" fill="none" stroke="#d7cec0" stroke-width="29" stroke-linecap="round" opacity=".33"/>
+  <rect width="1500" height="1050" filter="url(#grain)"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Little Light child portrait study</title>
+  <desc id="desc">Softly painted child portrait in cream, peach and umber.</desc>
+  <defs><filter id="grain"><feTurbulence baseFrequency=".72" numOctaves="4" seed="21"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .14 0"/></filter><filter id="rough"><feTurbulence baseFrequency=".017" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="12"/></filter></defs>
+  <rect width="1100" height="1400" fill="#d7cbb9"/>
+  <path d="M0 0h267l81 1400H0Z" fill="#a79683" opacity=".67"/>
+  <path d="M912 0h188v1400H780c71-302 103-745 132-1400Z" fill="#eee3d2" opacity=".68"/>
+  <g filter="url(#rough)">
+    <path d="M266 1400c13-242 53-414 149-517 84-90 217-112 329-47 152 89 205 281 176 564Z" fill="#8f7969"/>
+    <ellipse cx="565" cy="660" rx="236" ry="283" fill="#ce977b"/>
+    <path d="M324 623c15-233 137-381 321-349 143 25 227 148 184 335-142-87-310-83-505 14Z" fill="#65463c"/>
+    <path d="M396 684c60-31 119-34 178-8" fill="none" stroke="#64443a" stroke-width="19" stroke-linecap="round"/>
+    <path d="M626 672c55-23 108-21 158 8" fill="none" stroke="#64443a" stroke-width="18" stroke-linecap="round"/>
+    <ellipse cx="477" cy="723" rx="35" ry="27" fill="#2f2925"/>
+    <ellipse cx="705" cy="716" rx="35" ry="27" fill="#2f2925"/>
+    <path d="M511 852c75 51 148 49 219-7-45 104-160 109-219 7Z" fill="#914f46"/>
+    <path d="M593 712c-7 67 4 119 34 155-26 15-53 15-81 1" fill="none" stroke="#8f5e4e" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <path d="M287 1171c239-99 445-78 623 64" fill="none" stroke="#e9decb" stroke-width="90" stroke-linecap="round" opacity=".73"/>
+  <rect width="1100" height="1400" filter="url(#grain)"/>
+</svg>
