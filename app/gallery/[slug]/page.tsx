@@ -88,7 +88,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
                 width={image.width}
                 height={image.height}
                 sizes="(max-width: 850px) 94vw, 62vw"
-                priority={index === 0}
+                preload={index === 0}
               />
             </figure>
           ))}

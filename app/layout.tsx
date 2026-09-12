@@ -30,6 +30,31 @@ const gallerySans = localFont({
   display: "swap",
 });
 
+const salonSerif = localFont({
+  src: [
+    {
+      path: "./fonts/JulesSalon-Roman.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/JulesSalon-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-salon",
+  display: "swap",
+});
+
+const julesSignature = localFont({
+  src: "./fonts/JulesChancery-MediumItalic.otf",
+  variable: "--font-signature",
+  weight: "400",
+  style: "italic",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
@@ -58,7 +83,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#2a0d12",
+  themeColor: "#211611",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -71,7 +96,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang="en" className={gallerySans.variable}>
+    <html
+      lang="en"
+      className={`${gallerySans.variable} ${salonSerif.variable} ${julesSignature.variable}`}
+    >
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content
