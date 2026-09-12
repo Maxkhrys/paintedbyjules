@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { siteConfig } from "@/config/site";
@@ -6,6 +7,28 @@ import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const siteUrl = getSiteUrl();
+
+const gallerySans = localFont({
+  src: [
+    {
+      path: "./fonts/NimbusSansNarrow-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/NimbusSansNarrow-Oblique.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/NimbusSansNarrow-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-gallery",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -35,7 +58,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#eee9e1",
+  themeColor: "#2a0d12",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -48,7 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={gallerySans.variable}>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content

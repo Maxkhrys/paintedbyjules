@@ -1,106 +1,155 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArtworkCard } from "@/components/ArtworkCard";
 import { ArrowUpRight } from "@/components/ArrowUpRight";
+import { ArtworkCard } from "@/components/ArtworkCard";
 import { EditorialLink } from "@/components/EditorialLink";
 import { commissionSteps } from "@/config/commissions";
 import { getArtwork } from "@/data/artworks";
+import { formatPrice } from "@/lib/format-price";
 
 export default function HomePage() {
-  const hero = getArtwork("still-here")!;
-  const motherAndDaughter = getArtwork("mother-and-daughter")!;
+  const softHours = getArtwork("soft-hours")!;
+  const afterlight = getArtwork("afterlight")!;
+  const garden = getArtwork("garden-at-eleven")!;
+  const sundaySilk = getArtwork("sunday-silk")!;
+  const blueMorning = getArtwork("blue-before-morning")!;
+  const wildPeonies = getArtwork("wild-peonies")!;
+  const lowTide = getArtwork("low-tide")!;
+  const sheKeptTheLight = getArtwork("she-kept-the-light")!;
+  const twoOfUs = getArtwork("two-of-us")!;
   const quietCompany = getArtwork("quiet-company")!;
-  const summerAfternoon = getArtwork("summer-afternoon")!;
-  const afterTheDance = getArtwork("after-the-dance")!;
-  const wildGarden = getArtwork("wild-garden")!;
+  const firstDance = getArtwork("first-dance")!;
+  const redRoom = getArtwork("the-red-room")!;
 
   return (
     <main id="main-content" className="home-page">
-      <section className="home-hero" aria-labelledby="home-title">
-        <div className="home-hero__composition">
-          <p className="home-hero__topline">Original works · Portraits from photographs</p>
+      <section className="salon-hero" aria-labelledby="home-title">
+        <div className="salon-hero__ceiling" aria-hidden="true" />
+        <p className="salon-hero__room-code">Private viewing / Collection I</p>
 
-          <h1 id="home-title" className="home-hero__title">
-            <span>Painted</span>
-            <span>by Jules</span>
-          </h1>
-
-          <figure className="home-hero__art">
-            <Link href={`/gallery/${hero.slug}`} aria-label={`View ${hero.title}`}>
-              <Image
-                src={hero.images[0].src}
-                alt={hero.images[0].alt}
-                fill
-                priority
-                sizes="(max-width: 700px) 78vw, (max-width: 1100px) 48vw, 36vw"
-              />
-            </Link>
-            <figcaption>
-              <span>{hero.title}</span>
-              <span>{hero.medium} · Preview study</span>
-            </figcaption>
+        <div className="salon-hero__gallery">
+          <figure className="salon-hero__work salon-hero__work--left">
+            <Image
+              src={afterlight.images[0].src}
+              alt={afterlight.images[0].alt}
+              fill
+              priority
+              sizes="22vw"
+            />
           </figure>
 
-          <div className="home-hero__copy">
-            <p>Portraits painted by hand from photographs you already love.</p>
-            <EditorialLink href="/commissions#request">Commission a portrait</EditorialLink>
+          <figure className="salon-hero__work salon-hero__work--centre">
+            <Link href={`/gallery/${softHours.slug}`} aria-label={`View ${softHours.title}`}>
+              <Image
+                src={softHours.images[0].src}
+                alt={softHours.images[0].alt}
+                fill
+                priority
+                sizes="(max-width: 760px) 78vw, 38vw"
+              />
+              <figcaption>
+                <span>No. 01 / {softHours.title}</span>
+                <span>{softHours.price ? formatPrice(softHours.price) : "Private enquiry"}</span>
+              </figcaption>
+            </Link>
+          </figure>
+
+          <figure className="salon-hero__work salon-hero__work--right">
+            <Image
+              src={garden.images[0].src}
+              alt={garden.images[0].alt}
+              fill
+              priority
+              sizes="22vw"
+            />
+          </figure>
+        </div>
+
+        <div className="salon-hero__identity">
+          <h1 id="home-title">
+            <span>Painted by</span>
+            <span>Jules</span>
+          </h1>
+          <p>Original paintings and portrait commissions, made slowly by one hand.</p>
+        </div>
+
+        <Link className="salon-hero__entry" href="/gallery">
+          Enter the viewing room
+          <ArrowUpRight />
+        </Link>
+
+        <p className="salon-hero__edition" aria-hidden="true">
+          Twelve works · 2026
+        </p>
+      </section>
+
+      <section className="home-register page-shell" aria-labelledby="register-title">
+        <div className="home-register__ledger">
+          <p><span>12</span> works in the current viewing</p>
+          <p><span>07</span> original works</p>
+          <p><span>05</span> portrait studies</p>
+          <p><span>I</span> inaugural collection</p>
+        </div>
+
+        <header className="home-register__introduction">
+          <h2 id="register-title">Paintings with a private life.</h2>
+          <div>
+            <p>
+              Figures, rooms, flowers and coastlines held in a restrained palette,
+              with the surface left alive.
+            </p>
+            <EditorialLink href="/gallery">View the complete collection</EditorialLink>
           </div>
+        </header>
 
-          <Link className="home-hero__work-link" href="/gallery">
-            Explore the catalogue
-            <ArrowUpRight />
-          </Link>
-
-          <p className="home-hero__edition" aria-hidden="true">
-            Studio collection · 2026
-          </p>
+        <div className="home-register__works">
+          <ArtworkCard artwork={sundaySilk} />
+          <ArtworkCard artwork={blueMorning} />
+          <ArtworkCard artwork={wildPeonies} />
+          <ArtworkCard artwork={lowTide} />
         </div>
       </section>
 
-      <section className="home-selected page-shell" aria-labelledby="selected-title">
-        <div className="home-selected__intro">
-          <h2 id="selected-title">Selected work</h2>
-          <p>
-            People, pets and original studies. Each piece begins with a subject worth looking at slowly.
-          </p>
-          <EditorialLink href="/gallery">View all work</EditorialLink>
+      <section className="commission-salon" aria-labelledby="commission-salon-title">
+        <div className="commission-salon__heading page-shell">
+          <h2 id="commission-salon-title">A photograph, translated into paint.</h2>
+          <div>
+            <p>
+              Jules works from the images you already return to: the unguarded
+              expression, the familiar posture, the moment between poses.
+            </p>
+            <EditorialLink href="/commissions" inverse>
+              Explore private commissions
+            </EditorialLink>
+          </div>
         </div>
 
-        <div className="home-selected__grid">
-          <ArtworkCard artwork={motherAndDaughter} className="home-selected__family" />
-          <ArtworkCard artwork={quietCompany} className="home-selected__pet" />
-          <ArtworkCard artwork={summerAfternoon} className="home-selected__original" />
+        <div className="commission-salon__wall page-shell">
+          {[sheKeptTheLight, twoOfUs, quietCompany, firstDance].map((artwork, index) => (
+            <Link
+              className="commission-salon__portrait"
+              href={`/gallery/${artwork.slug}`}
+              key={artwork.slug}
+            >
+              <span>0{index + 1}</span>
+              <Image
+                src={artwork.images[0].src}
+                alt={artwork.images[0].alt}
+                fill
+                sizes="(max-width: 720px) 78vw, 23vw"
+              />
+              <strong>{artwork.title}</strong>
+            </Link>
+          ))}
         </div>
       </section>
 
-      <section className="home-commission" aria-labelledby="commission-intro-title">
-        <div className="home-commission__image">
-          <Image
-            src={afterTheDance.images[0].src}
-            alt={afterTheDance.images[0].alt}
-            fill
-            sizes="(max-width: 800px) 100vw, 58vw"
-          />
-          <span>Reference photograph → hand-painted piece</span>
+      <section className="home-process page-shell" aria-labelledby="home-process-title">
+        <div className="home-process__statement">
+          <p>From photograph</p>
+          <h2 id="home-process-title">to painted object.</h2>
         </div>
-        <div className="home-commission__body">
-          <p className="home-commission__number">One photograph is enough to begin.</p>
-          <h2 id="commission-intro-title">Painted to be kept.</h2>
-          <p>
-            Send the photographs you keep coming back to. Jules will help choose the crop, composition and size before painting starts.
-          </p>
-          <EditorialLink href="/commissions" inverse>
-            Read about commissions
-          </EditorialLink>
-        </div>
-      </section>
-
-      <section className="process-preview page-shell" aria-labelledby="process-title">
-        <div className="process-preview__heading">
-          <h2 id="process-title">From idea to finished piece</h2>
-          <p>No mystery. Five clear stages, with the composition agreed before final work begins.</p>
-        </div>
-        <ol className="process-preview__list">
+        <ol>
           {commissionSteps.map((step) => (
             <li key={step.number}>
               <span>{step.number}</span>
@@ -109,49 +158,26 @@ export default function HomePage() {
             </li>
           ))}
         </ol>
-        <EditorialLink href="/commissions#process">See the full commission process</EditorialLink>
       </section>
 
-      <section className="home-originals page-shell" aria-labelledby="originals-title">
-        <div className="home-originals__heading">
-          <h2 id="originals-title">Originals, one at a time.</h2>
-          <p>Standalone work made outside commissions. Available pieces are marked in the catalogue.</p>
-        </div>
-        <div className="home-originals__work">
-          <ArtworkCard artwork={wildGarden} />
-          <div className="home-originals__aside">
-            <ArtworkCard artwork={summerAfternoon} />
-            <p>Colour lives in the artwork. Everything around it stays quiet.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="home-artist" aria-labelledby="artist-title">
-        <div className="home-artist__portrait">
+      <section className="home-studio" aria-labelledby="studio-title">
+        <div className="home-studio__image">
           <Image
-            src="/artwork/jules-studio.svg"
-            alt="Preview illustration showing a quiet artist studio with an easel"
+            src={redRoom.images[0].src}
+            alt={redRoom.images[0].alt}
             fill
-            sizes="(max-width: 800px) 100vw, 45vw"
+            sizes="(max-width: 800px) 100vw, 58vw"
           />
-          <span>Artist portrait and studio photography to be supplied</span>
         </div>
-        <div className="home-artist__copy">
-          <h2 id="artist-title">One artist. One process.</h2>
-          <p>
-            Every enquiry, composition and finished painting stays with Jules from start to finish. The result should feel recognisable, considered and made for one home.
-          </p>
-          <EditorialLink href="/about">Meet Jules</EditorialLink>
+        <div className="home-studio__copy">
+          <p>Painted by Jules / Independent practice</p>
+          <h2 id="studio-title">A small studio with a serious eye.</h2>
+          <span>
+            Every enquiry, composition and finished painting stays with Jules from
+            the first photograph to the final surface.
+          </span>
+          <EditorialLink href="/about">Meet the artist</EditorialLink>
         </div>
-      </section>
-
-      <section className="home-closing" aria-labelledby="closing-title">
-        <p>Start with a photograph.</p>
-        <h2 id="closing-title">Who would you like painted?</h2>
-        <Link href="/commissions#request">
-          Request a commission
-          <ArrowUpRight />
-        </Link>
       </section>
     </main>
   );

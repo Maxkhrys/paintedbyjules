@@ -1,8 +1,17 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "Painted by Jules - original artwork and bespoke portraits";
+export const alt = "Painted by Jules — original paintings and portrait commissions";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+const galleryFont = await readFile(
+  join(process.cwd(), "app/fonts/NimbusSansNarrow-Regular.otf"),
+);
+const heroImage = await readFile(
+  join(process.cwd(), "public/collection-v2/soft-hours-og.jpg"),
+);
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -14,38 +23,70 @@ export default function OpenGraphImage() {
           height: "100%",
           position: "relative",
           overflow: "hidden",
-          background: "#e9e2d8",
-          color: "#292623",
-          padding: "66px 76px",
-          fontFamily: "Georgia, serif",
+          background: "#d5cdca",
+          color: "#241014",
+          fontFamily: "Gallery",
         }}
       >
         <div
           style={{
             display: "flex",
-            position: "absolute",
-            width: 420,
-            height: 540,
-            right: 86,
-            top: 46,
-            background: "#9b6b56",
-            transform: "rotate(2deg)",
+            width: "58%",
+            height: "100%",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: "58px 62px",
           }}
         >
-          <div style={{ position: "absolute", width: 230, height: 230, borderRadius: 999, background: "#c89478", top: 110, left: 96 }} />
-          <div style={{ position: "absolute", width: 260, height: 180, borderRadius: "50% 50% 12% 12%", background: "#433730", top: 55, left: 80 }} />
-          <div style={{ position: "absolute", width: 310, height: 190, borderRadius: "45% 45% 0 0", background: "#657074", bottom: 0, left: 55 }} />
-        </div>
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", width: 640 }}>
-          <div style={{ display: "flex", fontFamily: "Arial, sans-serif", fontSize: 20 }}>Original work · Bespoke portraits</div>
-          <div style={{ display: "flex", flexDirection: "column", fontSize: 112, lineHeight: 0.86, letterSpacing: -5 }}>
-            <span>Painted</span>
-            <span style={{ marginLeft: 138, fontStyle: "italic" }}>by Jules</span>
+          <div style={{ display: "flex", fontSize: 19, letterSpacing: 3 }}>
+            PRIVATE VIEWING / COLLECTION I
           </div>
-          <div style={{ display: "flex", fontFamily: "Arial, sans-serif", fontSize: 23 }}>Painted by hand from photographs you already love.</div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontSize: 104,
+              letterSpacing: -2,
+              lineHeight: 0.83,
+              textTransform: "uppercase",
+            }}
+          >
+            <span>Painted by</span>
+            <span>Jules</span>
+          </div>
+          <div style={{ display: "flex", fontSize: 21, letterSpacing: 1 }}>
+            ORIGINAL WORKS · PORTRAIT COMMISSIONS
+          </div>
         </div>
+
+        <img
+          alt=""
+          src={`data:image/jpeg;base64,${heroImage.toString("base64")}`}
+          style={{ width: "42%", height: "100%", objectFit: "cover" }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: "56.8%",
+            display: "flex",
+            width: 15,
+            background: "#351016",
+          }}
+        />
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Gallery",
+          data: galleryFont,
+          style: "normal",
+          weight: 400,
+        },
+      ],
+    },
   );
 }

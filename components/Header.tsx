@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BrandMark } from "@/components/BrandMark";
 import { ArrowUpRight } from "@/components/ArrowUpRight";
 import { siteConfig } from "@/config/site";
 
@@ -19,11 +18,11 @@ export function Header() {
   }, [isOpen]);
 
   return (
-    <header className="site-header">
+    <header className="site-header" data-home={pathname === "/"}>
       <div className="site-header__inner">
         <Link className="site-logo" href="/" aria-label="Painted by Jules home">
-          <BrandMark className="site-logo__mark" />
           <span className="site-logo__name">Painted by Jules</span>
+          <span className="site-logo__descriptor">Independent studio</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -38,7 +37,7 @@ export function Header() {
         </nav>
 
         <Link className="header-commission" href="/commissions#request">
-          <span>Request a portrait</span>
+          <span>Private enquiry</span>
           <ArrowUpRight />
         </Link>
 
@@ -56,6 +55,7 @@ export function Header() {
       </div>
 
       <div id="mobile-menu" className="mobile-menu" data-open={isOpen} aria-hidden={!isOpen}>
+        <p className="mobile-menu__room">Viewing room / 01</p>
         <nav aria-label="Mobile navigation">
           {siteConfig.nav.map((item, index) => {
             const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -79,10 +79,10 @@ export function Header() {
           tabIndex={isOpen ? 0 : -1}
           onClick={() => setIsOpen(false)}
         >
-          Start a commission
+          Begin a private enquiry
           <ArrowUpRight />
         </Link>
-        <p>Original artwork and portraits, painted by hand.</p>
+        <p className="mobile-menu__note">Original paintings and portraits, made slowly by one hand.</p>
       </div>
     </header>
   );

@@ -10,14 +10,22 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <main id="main-content" className="gallery-page page-shell">
-      <header className="gallery-page__header">
-        <h1>Work</h1>
-        <div>
-          <p>Portraits, personal pieces and original studies.</p>
+    <main id="main-content" className="gallery-page">
+      <header className="gallery-page__header page-shell">
+        <p>Collection I / 2026</p>
+        <div className="gallery-page__title">
+          <h1>The viewing room</h1>
+          <p>Original works and commissioned studies, presented together as one private collection.</p>
         </div>
+        <dl>
+          <div><dt>Works</dt><dd>12</dd></div>
+          <div><dt>Available</dt><dd>05</dd></div>
+          <div><dt>Studio</dt><dd>Independent</dd></div>
+        </dl>
       </header>
-      <GalleryGrid />
+      <div className="page-shell">
+        <GalleryGrid />
+      </div>
     </main>
   );
 }

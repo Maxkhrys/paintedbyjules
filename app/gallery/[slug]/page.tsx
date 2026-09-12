@@ -74,7 +74,8 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
   return (
     <main id="main-content" className="artwork-page">
       <div className="artwork-page__back page-shell">
-        <Link href="/gallery">← Back to work</Link>
+        <span>Collection I / {String(artworks.indexOf(artwork) + 1).padStart(2, "0")}</span>
+        <Link href="/gallery">← Return to the viewing room</Link>
       </div>
 
       <article className="artwork-detail page-shell">
@@ -89,13 +90,14 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
                 sizes="(max-width: 850px) 94vw, 62vw"
                 priority={index === 0}
               />
-              {artwork.placeholder ? <figcaption>Illustrative study · final artwork photography pending</figcaption> : null}
             </figure>
           ))}
         </div>
 
         <aside className="artwork-detail__catalogue">
-          <p className="artwork-detail__index">Catalogue / {String(artworks.indexOf(artwork) + 1).padStart(2, "0")}</p>
+          <p className="artwork-detail__index">
+            {artwork.type === "original" ? "Original work" : "Commission study"} / {artwork.year}
+          </p>
           <h1>{artwork.title}</h1>
           <p className="artwork-detail__description">{artwork.description}</p>
 
@@ -144,7 +146,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
 
       {related.length ? (
         <section className="related-work page-shell" aria-labelledby="related-title">
-          <h2 id="related-title">Keep looking</h2>
+          <h2 id="related-title">On the next wall</h2>
           <div>
             {related.map((item) => (
               <ArtworkCard artwork={item} key={item.slug} />
