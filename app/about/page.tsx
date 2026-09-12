@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { EditorialLink } from "@/components/EditorialLink";
+import { getArtwork } from "@/data/artworks";
 
 export const metadata: Metadata = {
   title: "About Jules",
@@ -10,64 +11,95 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const softHours = getArtwork("soft-hours")!;
+  const afterlight = getArtwork("afterlight")!;
+  const redRoom = getArtwork("the-red-room")!;
+
   return (
     <main id="main-content" className="about-page">
-      <section className="about-hero page-shell" aria-labelledby="about-title">
-        <p className="about-hero__folio">The artist / The studio</p>
-        <h1 id="about-title">
-          <span>Painted slowly.</span>
-          <span>Kept personally.</span>
-        </h1>
-        <figure>
+      <section className="about-opening page-shell" aria-labelledby="about-title">
+        <p className="about-opening__register">Jules / Artist &amp; founder</p>
+        <h1 id="about-title">Painted by one hand. Chosen for one home.</h1>
+        <figure className="about-opening__work">
           <Image
-            src="/artwork/jules-studio.svg"
-            alt="Preview illustration of a quiet painter's studio with an easel and window light"
+            src={softHours.images[0].src}
+            alt={softHours.images[0].alt}
             fill
             priority
-            sizes="(max-width: 760px) 92vw, 58vw"
+            sizes="(max-width: 760px) 94vw, 48vw"
           />
-          <figcaption>Artist portrait and studio photography to be supplied</figcaption>
         </figure>
-        <p className="about-hero__intro">
-          Painted by Jules is an independent practice for original work and bespoke portraits. Every piece stays close to one hand, one conversation and one subject.
+        <p className="about-opening__intro">
+          Painted by Jules is an independent practice for original work and
+          commissioned portraits. Every piece stays close to one conversation,
+          one subject and one pair of hands.
         </p>
       </section>
 
-      <section className="about-story page-shell" aria-labelledby="about-story-title">
-        <h2 id="about-story-title">More than a photograph.</h2>
-        <div>
-          <p>
-            Painting changes the pace. It lets expression, gesture and the relationship between subjects come forward while unnecessary detail falls away.
-          </p>
-          <p>
-            Jules begins with the photographs people already value. Together, you choose what matters in them: a look, a hand, a particular posture, or the atmosphere of one day.
-          </p>
-        </div>
-      </section>
-
-      <section className="about-method" aria-labelledby="about-method-title">
-        <div className="about-method__image">
+      <section className="about-manifesto" aria-labelledby="manifesto-title">
+        <div className="about-manifesto__image">
           <Image
-            src="/artwork/still-here-detail.svg"
-            alt="Preview detail of layered portrait brushwork"
+            src={afterlight.images[0].src}
+            alt={afterlight.images[0].alt}
             fill
-            sizes="(max-width: 800px) 100vw, 48vw"
+            sizes="(max-width: 800px) 100vw, 54vw"
           />
         </div>
-        <div className="about-method__copy">
-          <h2 id="about-method-title">Looking, editing, painting.</h2>
+        <div className="about-manifesto__copy">
+          <h2 id="manifesto-title">Look longer. Edit harder. Keep the brush visible.</h2>
           <p>
-            A portrait is not a copy of every pixel. References are considered, the composition is agreed, then paint is used to decide what stays sharp and what can remain loose.
+            Painting is not a copy of every pixel. Jules begins with the photographs
+            people already value, then decides what deserves clarity and what can
+            dissolve into colour.
           </p>
           <p>
-            The finished piece should still feel unmistakably like its subject, without losing the evidence of how it was made.
+            The finished piece should feel unmistakably like its subject while still
+            showing how it was made.
           </p>
         </div>
       </section>
 
-      <section className="about-next page-shell">
-        <p>If there is someone you would like to see in paint, begin with the photographs you have.</p>
-        <EditorialLink href="/commissions#request">Tell Jules about the piece</EditorialLink>
+      <section className="about-practice page-shell" aria-labelledby="practice-title">
+        <div className="about-practice__heading">
+          <h2 id="practice-title">The practice, kept personal.</h2>
+          <p>
+            A young studio can still hold itself to a serious standard: clear
+            communication, exacting composition and no distance between the client
+            and the artist.
+          </p>
+        </div>
+        <div className="about-practice__principles">
+          <article>
+            <span>01</span>
+            <h3>One point of contact</h3>
+            <p>Jules handles the enquiry, the composition and the painting herself.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>References with meaning</h3>
+            <p>The best starting image is often the honest one, not the formal one.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>A surface with life</h3>
+            <p>Edges stay loose, revisions remain visible and the paint is allowed to be paint.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="about-architecture">
+        <Image
+          src={redRoom.images[0].src}
+          alt={redRoom.images[0].alt}
+          fill
+          sizes="100vw"
+        />
+        <div>
+          <p>Have someone in mind?</p>
+          <EditorialLink href="/commissions#request" inverse>
+            Begin a private commission
+          </EditorialLink>
+        </div>
       </section>
     </main>
   );

@@ -18,16 +18,24 @@ export function GalleryGrid() {
   return (
     <div className="gallery-browser">
       <div className="gallery-filters" role="group" aria-label="Filter artwork">
-        {galleryCategories.map((category) => (
+        {galleryCategories.map((category, index) => {
+          const count = category === "All"
+            ? artworks.length
+            : artworks.filter((artwork) => artwork.category === category).length;
+
+          return (
           <button
             key={category}
             type="button"
             aria-pressed={activeCategory === category}
             onClick={() => setActiveCategory(category)}
           >
+            <span>{String(index + 1).padStart(2, "0")}</span>
             {category}
+            <small>{String(count).padStart(2, "0")}</small>
           </button>
-        ))}
+          );
+        })}
       </div>
 
       <p className="sr-only" aria-live="polite">
@@ -38,7 +46,7 @@ export function GalleryGrid() {
         {visibleArtwork.map((artwork, index) => (
           <ArtworkCard
             artwork={artwork}
-            className={`gallery-grid__item gallery-grid__item--${(index % 6) + 1}`}
+            className={`gallery-grid__item gallery-grid__item--${(index % 4) + 1}`}
             key={artwork.slug}
             priority={index < 2}
           />
