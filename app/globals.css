@@ -305,6 +305,14 @@ p {
   padding: clamp(3.5rem, 7vw, 7rem) var(--page-pad) 2rem;
 }
 
+body:has(.home-page) .site-footer__opening {
+  display: none;
+}
+
+body:has(.home-page) .site-footer__inner {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
 .site-footer__opening {
   display: grid;
   grid-template-columns: 1fr auto;

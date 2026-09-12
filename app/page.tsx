@@ -15,7 +15,7 @@ export default function HomePage() {
   const wildGarden = getArtwork("wild-garden")!;
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="home-page">
       <section className="home-hero" aria-labelledby="home-title">
         <div className="home-hero__composition">
           <p className="home-hero__topline">Original works · Portraits from photographs</p>
